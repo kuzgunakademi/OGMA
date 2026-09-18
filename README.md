@@ -57,6 +57,20 @@ run_gui.bat        → GUI'yi başlatır (sürücü harfinden bağımsız)
 env_create.bat     → Miniconda + internet gerekir (bir kez)
 ```
 
+## Depoda Neler YOK ve Bunları Nasıl Sağlarsın?
+
+> Bu repo yalnızca **kaynak kodunu** içerir. Çalışma zamanına ait büyük ikili dosyalar ve yerel durum `gitignore` ile dışarıda tutulmuştur — repoyu klonlayan kişi aşağıdakileri **kendisi sağlamalıdır**.
+
+| Öğe | Ne işe yarar | Nasıl elde edilir |
+|---|---|---|
+| `Python_Ortami/` | Taşınabilir conda ortamı (CPU modeli için `llama-cpp-python` dahil) | Depoda yoktur. `env_create.bat` ile yeniden oluşturulur (Miniconda + bir kez internet gerekir) |
+| `Miniconda_Kurulum.exe` | Miniconda kurulum paketi (~92 MB) | Depoda yoktur. [conda.io resmi sitesinden](https://docs.conda.io/en/latest/miniconda.html) indirilir |
+| `models/` → `base/` | Yerel GGUF model dosyaları (~4.1 GB, Türkçe 7B Q4 taban model) | Depoda yoktur. Kendi GGUF modelinizi `models/base/` altına koymalısınız |
+| `libs/llama-server-cuda`, `libs/llama-server-vulkan`, `libs/*.zip` | GPU motorları (CUDA/Vulkan runtime ~646 MB) | Depoda yoktur. [llama.cpp sürümlerinden](https://github.com/ggml-org/llama.cpp/releases) `llama-server` CUDA/Vulkan paketleri indirilip `libs/` altına yerleştirilir |
+| `storage/` | Çalışma zamanı durumu (`config.json`, session cache, loglar) | Depoda yoktur. İlk çalıştırmada otomatik oluşturulur. API anahtarları yalnızca burada, yerel olarak saklanır |
+
+**Hatırlatma:** `models/api_models.py`, `models/__init__.py` bir Python paketi olduğundan depoda **vardır**; yalnızca alt klasörlerdeki (GGUF modelleri, motorlar) hariç tutulmuştur.
+
 ## Kullanım
 
 **CLI:**
