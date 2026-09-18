@@ -47,6 +47,7 @@ class OgmaCLI:
 
     def initialize(self) -> bool:
         Console.info("Ogma Baslatiliyor...")
+        Console.info("© 2026 İlker Can Karagülle · Loreweld AI (loreweld.ai)")
         if not self.agent.initialize():
             Console.error("Baslatma basarisiz!")
             return False

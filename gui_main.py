@@ -1636,6 +1636,12 @@ Created by İlker Can Karagülle | Ogma 2024
                                  bg='#34495e', fg='#1abc9c', font=('Arial', 8, 'bold'))
         monitor_label.pack(side=tk.RIGHT, padx=(0, 12))
 
+        # Loreweld imzasi
+        footer_frame = tk.Frame(self.root, bg='#2c3e50')
+        footer_frame.pack(side=tk.BOTTOM, fill=tk.X)
+        tk.Label(footer_frame, text="© 2026 İlker Can Karagülle · Loreweld AI (loreweld.ai)",
+                 bg='#2c3e50', fg='#7f8c8d', font=('Arial', 7, 'bold')).pack(side=tk.LEFT, padx=10)
+
     def _monitor_loop(self):
         """2 sn'de bir CPU/GPU/RAM olc, arayuzu guncelle."""
         import time as _t
