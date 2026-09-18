@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ogma"
+version = "4.0.0"
+description = "Proje Analiz Asistanı - Hibrit AST + LLM Kod Mimarisi Analiz Aracı"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31.0",
+    "colorama>=0.4.6",
+    "rich>=13.0.0",
+    "prompt-toolkit>=3.0.0",
+    "pyyaml>=6.0",
+    "aiofiles>=23.0.0",
+    "pathlib2>=2.3.0",
+    "watchdog>=3.0.0",
+    "llama-cpp-python==0.3.35",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.11.0",
+    "pytest-xdist>=3.3.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+addopts = "-v --tb=short --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "ANN", "SIM", "TCH", "ARG", "PTH", "ERA", "PL", "TRY", "NPY", "PERF", "ISC", "ICN", "PIE", "TID", "PD", "RET", "C90", "FLY", "INP", "DTZ", "EXE", "LOG", "RSE"]
+ignore = ["E501", "B008", "C901", "ANN101", "ANN102", "ANN103", "ANN201", "ANN202", "ANN204", "ANN401"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+ignore_missing_imports = true

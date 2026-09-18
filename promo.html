@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogma — AI Code Architect | Sunum & Tanıtım</title>
+    <style>
+        :root { --bg-dark: #0f172a; --bg-card: #1e293b; --accent: #38bdf8; --accent-green: #4ade80; --accent-purple: #c084fc; --accent-orange: #fbbf24; --text-main: #f8fafc; --text-muted: #94a3b8; --border: #334155; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 50px 0; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+        header h1 { font-size: 2.8rem; margin-bottom: 15px; background: linear-gradient(90deg, var(--accent), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { font-size: 1.2rem; color: var(--text-muted); }
+        .badge { display: inline-block; background: var(--accent); color: var(--bg-dark); padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin-top: 10px; }
+        section { margin-bottom: 50px; }
+        h2 { font-size: 2rem; margin-bottom: 25px; color: var(--accent); border-left: 4px solid var(--accent); padding-left: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 25px; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--accent-green); }
+        .card p, .card li { color: var(--text-muted); font-size: 0.95rem; }
+        .card ul { padding-left: 18px; margin-top: 8px; }
+        .card li { margin-bottom: 4px; }
+        table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); margin-top: 20px; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: rgba(56, 189, 248, 0.1); color: var(--accent); font-weight: 600; }
+        tr:last-child td { border-bottom: none; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .tech-pill { background: rgba(192, 132, 252, 0.15); color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.3); padding: 6px 14px; border-radius: 8px; font-size: 0.9rem; }
+        .highlight { background: linear-gradient(135deg, #1e293b, #0f172a); }
+        .metric { font-size: 1.5rem; font-weight: bold; color: var(--accent-green); }
+        .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        .trio .step { background: var(--bg-card); border: 2px solid var(--accent); border-radius: 12px; padding: 25px; text-align: center; }
+        .trio .step h3 { color: var(--accent); font-size: 1.4rem; margin-bottom: 10px; }
+        .trio .step p { color: var(--text-muted); }
+        .risk-high { color: #f87171; font-weight: bold; }
+        .risk-med { color: #fbbf24; font-weight: bold; }
+        .risk-low { color: #4ade80; font-weight: bold; }
+        footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Ogma <span style="font-size:1.4rem; -webkit-text-fill-color: var(--text-muted);">· AI Code Architect</span></h1>
+            <p>Kod tabanını ANLAR, gerçek ilişkilerle HARİTALAR, değişikliğin etkisini HESAPLAR — yerel, gizli, her PC'de</p>
+            <span class="badge">v5.0 — Knowledge Graph · Transitive Etki · Mimari Hafıza · Capability Test · MCP · CPU+GPU</span>
+        </header>
+        <section>
+            <h2>🎯 UNDERSTAND → MAP → CHANGE</h2>
+            <div class="trio">
+                <div class="step"><h3>1. UNDERSTAND</h3><p>Kod tabanının ne yaptığını çıkar: proje amacı, teknik altyapı, gelişim durumu — deterministik motor + LLM yorumu.</p></div>
+                <div class="step"><h3>2. MAP</h3><p>Dosya, sınıf, fonksiyon ve bağımlılıkları <b>gerçek ilişkilerle</b> haritala: Knowledge Graph + import grafiği + çağrı zinciri.</p></div>
+                <div class="step"><h3>3. CHANGE</h3><p>Bir şeyi değiştirdiğinde neyin etkileneceğini <b>seviye seviye hesapla</b>: dolaylı bağımlılar, etkilenen testler, risk seviyesi.</p></div>
+            </div>
+        </section>
+        <section>
+            <h2>🧠 Knowledge Graph (D1) — Kodun Zihinsel Modeli</h2>
+            <div class="card highlight">
+                <p style="font-size: 1.05rem; color: var(--text-main);">Ogma, kodu metin olarak değil <b>ilişkisel graf</b> olarak anlar. Her dosya, sınıf, fonksiyon ve metot bir düğüm; CONTAINS / IMPORTS / CALLS / INHERITS kenarlarıyla bağlanır. Fonksiyon-içi (lazy) importlar ve sınıf kurucu çağrıları dahil — <b>hiçbir ilişki kaçmaz</b>.</p>
+                <p style="margin-top: 10px;"><b>Ogma'nın kendi kodunda:</b> <span class="metric">543 düğüm · 646 kenar</span><br><span style="color: var(--text-muted); font-size: 0.9rem;">38 FILE · 54 CLASS · 371 METHOD · 80 FUNCTION | 506 CONTAINS · 37 IMPORTS · 102 CALLS · 1 INHERITS</span></p>
+            </div>
+        </section>
+        <section>
+            <h2>💥 Transitive Etki Analizi (D2) — Killer Feature</h2>
+            <div class="grid">
+                <div class="card"><h3>🔗 Seviye Seviye Etki Zinciri</h3><p>Bir dosyayı değiştirdiğinde: <b>Seviye 1</b> doğrudan bağımlılar → <b>Seviye 2+</b> dolaylı (transitive zincir). Her dosya en yakın seviyesinde bir kez görünür. Fonksiyon-içi importlar ve kurucu çağrılar dahil.</p></div>
+                <div class="card"><h3>⚠️ Risk Seviyesi</h3><p><span class="risk-high">HIGH</span> — döngü üyesi / geniş etki zinciri<br><span class="risk-med">MEDIUM</span> — 2+ bağımlı<br><span class="risk-low">LOW</span> — izole değişiklik<br>+ "Test kapsamı yok — dikkat!" uyarısı.</p></div>
+                <div class="card"><h3>🧪 Etkilenen Testler</h3><p>Değişiklikten etkilenecek test dosyaları otomatik listelenir — hangi testleri çalıştırman gerektiğini söyler.</p></div>
+            </div>
+        </section>
+        <section>
+            <h2>📚 Mimari Hafıza (D3) — "Bu Proje Nasıl Bu Hale Geldi?"</h2>
+            <div class="card highlight">
+                <p style="color: var(--text-main);">Her tarama geçmişe kaydedilir (dosya/satır/döngü/ölü/kalite/değişiklik). Zaman çizelgesi raporu (<code>kb/HAFIZA.md</code>) projenin evrimini gösterir: <b>v1 → v2 → v3 → v4</b>. LLM bu geçmişi bağlam alır — her seferinde sıfırdan anlamak zorunda kalmaz.</p>
+            </div>
+        </section>
+        <section>
+            <h2>📊 8 Analiz Türü — Deterministik Çekirdek + LLM</h2>
+            <table>
+                <thead><tr><th>Analiz</th><th>Motor</th><th>Ne Verir</th></tr></thead>
+                <tbody>
+                    <tr><td><b>Mimari Harita + API Yüzeyi</b></td><td>Algoritmik</td><td>Özyinelemeli ağaç + alt-sistem bazlı sınıf/fonksiyon <b>imzalarla</b> — anında.</td></tr>
+                    <tr><td><b>Bağımlılıklar & Döngüler</b></td><td>Statik (AST)</td><td>Import grafiği + ters bağımlılık + alt-sistem matrisi + <b>dairesel import tespiti</b> (Tarjan SCC).</td></tr>
+                    <tr><td><b>Ölü Kodlar</b></td><td>Statik (AST)</td><td><b>Proje-geneli çağrı grafiğiyle</b>: hiçbir yerden çağrılmayan fonksiyonlar (callback bilinçli) + kullanılmayan import'lar.</td></tr>
+                    <tr><td><b>Kalite & Güvenlik</b></td><td>Statik (AST)</td><td>0-40 dosya skoru + döngüsel karmaşıklık (CC) + <b>eval/shell/pickle/gizli-anahtar taraması</b> + ulaşılamaz kod + tip ipucu %.</td></tr>
+                    <tr><td><b>Hatalar & Eksikler</b></td><td>Statik (AST)</td><td>Sözdizimi + kapsam-farkında tanımsız adlar, satır numaralı ve uydurmasız. Yıldızlı import'ta susar.</td></tr>
+                    <tr><td><b>Gelişim Durumu</b></td><td>Algoritmik</td><td>Tespit edilen dillere göre ilgili dosyalar denetlenir; test araması özyinelemeli; 6 kriterli skor.</td></tr>
+                    <tr><td><b>Teknik Altyapı + Kullanım</b></td><td>Deterministik</td><td>Import'lar stdlib / üçüncü parti / yerel olarak kodla sınıflanır + <b>requirements vs gerçek importlar doğrulaması</b>.</td></tr>
+                    <tr><td><b>Proje Amacı</b></td><td>Yapay Zeka</td><td>KURULUM/README + giriş dosyalarından programın ne işe yaradığı çıkarılır.</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>📤 Çoklu Çıktı — Tek TXT Değil, 16 Dosya</h2>
+            <div class="grid">
+                <div class="card"><h3>📁 raporlar/ — Her Analiz Ayrı Dosya</h3><p>mimari_harita, bagimliliklar_donguler, olu_kodlar, kalite_guvenlik... — her biri ayrı .txt, zaman damgalı.</p></div>
+                <div class="card"><h3>🗂️ veri/ — JSON Veri Katmanı</h3><p>Tam graf/matris/döngü verisi, klasör-detay (dosya/dil/satır/boyut), tarama özeti — programatik kullanım için.</p></div>
+                <div class="card"><h3>📖 kb/ — KB Tarzı .md Raporları</h3><ul><li><code>QUICKREF.md</code> — 2 dk genel resim</li><li><code>PROJECT_MAP.md</code> — tam ağaç</li><li><code>SYMBOL_INDEX.md</code> — imzalı sembol indeksi</li><li><code>ARCHITECTURE.md</code> — bağımlılık/kalite özeti</li><li><code>HAFIZA.md</code> — zaman çizelgesi</li></ul></div>
+                <div class="card"><h3>📄 OZET.txt — Birleşik</h3><p>Tüm raporlar tek dosyada + <b>değişiklik takibi</b>: son taramadan beri +X eklenen, -Y silinen, ~Z değişen (dosya sha256 parmak iziyle).</p></div>
+            </div>
+        </section>
+        <section>
+            <h2>🛠️ Geliştirici Araçları — Tek Tek Çalışır, Taramadan Bağımsız</h2>
+            <div class="grid">
+                <div class="card"><h3>🔎 Sembol Ara</h3><p>Sınıf/fonksiyon/metod → dosya:satır. Önce var mı bak — <b>duplicate yapma</b>.</p></div>
+                <div class="card"><h3>📄 Dosya Anahatı</h3><p>Sınıf/fonksiyon haritası <b>imzalarla</b> + satır aralıkları — kodu okumadan önce haritaya bak.</p></div>
+                <div class="card"><h3>💥 Etki Analizi (v2)</h3><p>Seviye seviye etki + risk + etkilenen testler — değişikliğin domino etkisini gör.</p></div>
+            </div>
+        </section>
+        <section>
+            <h2>🔌 MCP Sunucu (E1) — IDE Entegrasyonu</h2>
+            <div class="card highlight">
+                <p style="color: var(--text-main);">Ogma, <b>MCP (Model Context Protocol) sunucusu</b> olarak çalışır: VSCode, Cline, OpenCode gibi editör asistanları Ogma'nın <b>9 deterministik aracını</b> çağırıp kanıtlı graf yanıtları alır. Kullanıcı ayrı bir pencere açmaz — kod yazdığı editörde, asistanı Ogma'yı sorgular.</p>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;"><b>9 araç:</b> proje özeti, sembol ara, dosya anahatı, etki analizi, ölü kod, kalite özeti, bağımlılık grafi, hafıza zaman çizelgesi, kullanım doğrulama. Tüm araçlar deterministik — editör LLM'i uydurma değil <b>kanıt</b> kullanır.</p>
+            </div>
+        </section>
+        <section>
+            <h2>🔌 OpenAI-Uyumlu Provider Uç Noktaları (E2)</h2>
+            <div class="card">
+                <p style="color: var(--text-main);">Deterministik analiz <b>her zaman lokalde</b> kalır (AST/Graph — internet gerekmez). Ancak reasoning (yorumlama/öneri) için kullanıcının elindeki donanım yeterli gelmezse, <b>herhangi bir OpenAI-uyumlu dış modele</b> yönlendirilebilir: DeepSeek v4, Z.ai GLM (GLM-5.3-Flash), OpenRouter, yerel vLLM/LM Studio — base_url + model + api_key tamamen kullanıcı tanımlı.</p>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">"4 GB lokal model günlük işler için yeterli; karmaşık mimari muhakeme gerektiğinde dış modele yönlendir" — hibrit yapı. Deterministik kanıt lokalde, reasoning dışarıda.</p>
+            </div>
+        </section>
+        <section>
+            <h2>👁️ Canlı İzleyici (E3)</h2>
+            <div class="card">
+                <p style="color: var(--text-main);">Dosya değişikliklerini gerçek zamanlı izler. Her değişen .py dosyası için <b>otomatik statik hata taraması + etki analizi + risk seviyesi</b> raporlanır. Sadece değişen dosyalar yeniden analiz edilir (fingerprint diff + AST cache) — tam tarama gerekmez.</p>
+            </div>
+        </section>
+        <section>
+            <h2>🧪 Model Capability Test (D4) — Modeli Tanı</h2>
+            <div class="card highlight">
+                <p style="color: var(--text-main);"><b>Modeli test eder</b> — kod tabanını değil. Yeni bir model yüklendiğinde (örneğin 7B'den 14B'ye geçtin, veya farklı bir model indirdin) Ogma o modeli daha önce hiç görmedi — güçlü mü, zayıf mı, hangi işlerde iyi hangi işlerde kötü, <b>bilmiyor</b>.</p>
+                <p style="margin-top: 10px; color: var(--text-main);">Capability Test, modele <b>20 standart görev</b> gönderir ("bu kodu açıkla", "bu buggy kodda hata bul", "bu değişikliğin riskini değerlendir"...) ve cevapları skorlar. Sonuç: ölçülmüş Capability Profile — kafadan puan değil, <b>gerçek LLM çağrılarından ölçülmüş</b> performans.</p>
+                <p style="margin-top: 10px; color: var(--accent-green);"><b>Ne işe yarar:</b> Ogma artık modelin güçlü/zayıf yönlerini bilerek doğru işe atar. Model refactoring'de zayıfsa → refactoring önerilerini deterministik motora güven, LLM'i sadece basit özet için kullan. Körü körüne model cevabını göstermez.</p>
+                <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;"><b>Ne zaman kullanılır:</b> Model başına bir kez. Günlük kullanımın parçası değil — geliştirme/kurulum aracı. Termometre kalibre etmek gibi: yeni model aldığında bir kez çalıştırırsın, profil kaydedilir, sonraki açılışlarda otomatik yüklenir. Mimari tarama bundan tamamen bağımsız — tarama zaten deterministik (AST), model sadece yorum katmanında.</p>
+            </div>
+            <table style="margin-top: 15px;">
+                <thead><tr><th>Kategori</th><th>Testler</th><th>Ne Ölçer</th></tr></thead>
+                <tbody>
+                    <tr><td><b>Basic Analysis</b></td><td>T01-T04</td><td>Kod amacı, import açıklama, kategorileme, özet</td></tr>
+                    <tr><td><b>Code Understanding</b></td><td>T05-T08</td><td>Fonksiyon davranışı, parametre tipi, hata bulma, diff</td></tr>
+                    <tr><td><b>Architecture</b></td><td>T09-T12</td><td>Mimari desen, bağımlılık zinciri, çoklu-dosya ilişki, alt-sistem</td></tr>
+                    <tr><td><b>Impact Analysis</b></td><td>T13-T16</td><td>Değişiklik etkisi, risk, test etkilenimi, koordinasyon</td></tr>
+                    <tr><td><b>Refactoring</b></td><td>T17-T20</td><td>Bölme önerisi, iyileştirme, yapısal öneri, migrasyon planı</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 10px; color: var(--text-muted); font-size: 0.9rem;">Sonuç örneği: <b>Basit Analiz %94 ████░</b> → güvenilir | <b>Refactoring %58 ██░░░</b> → zayıf. Model sınıfı otomatik çıkar (≥80% Pro, ≥60% Standard, <60% Lite).</p>
+        </section>
+        <section>
+            <h2>⚡ CPU + GPU Motorları (Ölçülü)</h2>
+            <div class="grid">
+                <div class="card"><h3>🐢 CPU Modu</h3><p>Her PC'de çalışır. 7B Q4: ~11 sn yükleme, ~15-20 tok/sn.</p></div>
+                <div class="card"><h3>🚀 GPU — NVIDIA CUDA</h3><p class="metric">61.3 tok/sn • GPU %95</p><p>Derleme/yönetici yok; gömülü CUDA runtime. nvidia-smi doğrulu.</p></div>
+                <div class="card"><h3>🎮 GPU — AMD/Intel Vulkan</h3><p class="metric">55.1 tok/sn • GPU %97</p><p>Gömülü Vulkan motoru; kartı listelerse çalışır, yoksa temiz CPU fallback.</p></div>
+            </div>
+        </section>
+        <section>
+            <h2>🖥️ Arayüz + Donanım + Hafıza</h2>
+            <div class="grid">
+                <div class="card"><h3>🏗 Mimari Odaklı Arayüz</h3><p>Analiz türleri tik penceresi (8 tür, hepsi varsayılan seçili), tek klasör seçimi, çıktı klasörü, ignore ayarları — tekrarsız tek yerden.</p></div>
+                <div class="card"><h3>📊 Canlı Monitör</h3><p>CPU %, GPU % + VRAM, RAM % — 2 sn'de bir. Modelin karta binip binmediği gözle görülür.</p></div>
+                <div class="card"><h3>🔀 Her Açılışta CPU/GPU Seçimi</h3><p>Kart adıyla sorulur; kapatırsan önceki seçim korunur, Araçlar'dan değiştirilir.</p></div>
+            </div>
+        </section>
+        <section>
+            <h2>🛡️ Kalite Altyapısı</h2>
+            <div class="grid">
+                <div class="card"><h3>🧪 18 Otomatik Test</h3><p>pytest: tarayıcı, hibrit motor, logger — <code>python -m pytest tests</code>.</p></div>
+                <div class="card"><h3>📝 Loglama + Crash</h3><p>Dönen <code>ogma.log</code> + <code>errors.log</code> + GPU server günlüğü — <code>storage/logs/</code>.</p></div>
+                <div class="card"><h3>⚡ AST Cache</h3><p>Aynı dosya 5+ kez parse edilmez — tarama hızlanır; dosya değişirse önbellek geçersizleşir.</p></div>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-pill">Python 3.11</span>
+                <span class="tech-pill">Knowledge Graph (AST)</span>
+                <span class="tech-pill">Tarjan SCC döngü tespiti</span>
+                <span class="tech-pill">Transitive Etki (BFS, seviyelendirilmiş)</span>
+                <span class="tech-pill">MCP Sunucu (stdio, 9 araç)</span>
+                <span class="tech-pill">OpenAI-uyumlu Provider</span>
+                <span class="tech-pill">Model Capability Test (20 test)</span>
+                <span class="tech-pill">Canlı İzleyici (fingerprint diff)</span>
+                <span class="tech-pill">pytest 18 test</span>
+            </div>
+        </section>
+        <section>
+            <h2>🎒 Taşınabilirlik + Gereksinimler</h2>
+            <div class="grid">
+                <div class="card"><h3>💾 USB ile Çalışır (~11 GB)</h3><p>Göreli yollar, sürücü-harf bağımsız; AMD PC'de CPU, NVIDIA'lıda GPU seçeneğiyle açılır. <code>env_create.bat</code> sıfırdan kurar.</p></div>
+                <div class="card"><h3>✅ Gerekenler (indirme yok)</h3><ul><li>Windows 10/11 64-bit, AVX2 işlemci</li><li>~11 GB boş alan; API anahtarı saklanmaz</li><li>Detay + 2. makine kabul testi + MCP kurulum: <code>KURULUM.txt</code></li></ul></div>
+            </div>
+        </section>
+        <section>
+            <h2>🗺️ Yol Haritası</h2>
+            <div class="grid">
+                <div class="card"><h3>✅ Tamamlanan</h3><ul><li>Knowledge Graph (D1) — 543 düğüm/646 kenar</li><li>Transitive Etki + Risk (D2)</li><li>Mimari Hafıza (D3)</li><li>Model Capability Test (D4) — 20 test, 5 kategori</li><li>MCP Sunucu (E1) — 9 araç, IDE entegrasyonu</li><li>Provider Uç Noktaları (E2)</li><li>Canlı İzleyici (E3)</li><li>Geliştirici Araçları (FAZ C)</li><li>KB Raporları (FAZ B)</li><li>7 Deterministik Analiz (FAZ A)</li></ul></div>
+                <div class="card"><h3>🔜 Sıradaki</h3><ul><li>Mini Benchmark (D5) — precision/recall ölçümü</li><li>Temizlik Sihirbazı — dry-run + yedek + geri alma</li><li>Provider yönetim UI (Ayarlar penceresine ekle/sil/seç)</li></ul></div>
+                <div class="card"><h3>🎯 Tasarım İlkesi</h3><p>"4 GB model bile olsa deterministik proje bilgisinin üzerine oturtarak en güvenilir asistan; 15 GB aynı altyapının derin reasoning katmanı."</p><p style="margin-top: 10px; color: var(--accent); font-weight: bold;">AST → Graph → Evidence → LLM</p><p style="margin-top: 5px; color: var(--text-muted); font-size: 0.9rem;">Gerçeklik LLM'e değil, deterministik motora emanet edilir. LLM sadece anlam/risk/öneri tarafında devreye girer.</p></div>
+            </div>
+        </section>
+        <footer>
+            <p>Ogma — UNDERSTAND · MAP · CHANGE</p>
+            <p style="margin-top: 5px; font-size: 0.8rem;">© 2026 Tüm Hakları Saklıdır.</p>
+        </footer>
+    </div>
+</body>
+</html>

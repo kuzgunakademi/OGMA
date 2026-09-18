@@ -1,0 +1,55 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# =========================
+# Sanal Ortam / Gömülü Çalışma Zamanları
+# =========================
+Python_Ortami/
+Miniconda_Kurulum.exe
+
+# =========================
+# LLM Modelleri ve GPU Motorları (yerel ikili dosyalar)
+# models/ bir Python paketidir (api_models.py, __init__.py); yalnızca
+# alt klasörler (GGUF modelleri ve motorlar) hariç tutulur.
+# =========================
+models/base/
+models/llama-server-cuda/
+models/llama-server-vulkan/
+models/integration/
+models/unit/
+libs/llama-server-cuda/
+libs/llama-server-vulkan/
+libs/*.zip
+
+# =========================
+# Çalışma Zamanı Durumu (API anahtarı dahil yerel kalır)
+# =========================
+storage/
+.ogma_cache/
+
+# =========================
+# Loglar ve Veritabanları
+# =========================
+*.log
+*.db
+*.sqlite3
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
+desktop.ini

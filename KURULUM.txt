@@ -1,0 +1,64 @@
+PROJE ANALIZ ASISTANI - KURULUM VE GEREKSINIMLER
+================================================
+
+1) GEREKSINIMLER (kullanicinin indirmesi gereken BIR SEY YOK)
+------------------------------------------------------------
+- Windows 10/11, 64-bit
+- AVX2 destekli islemci (2013 sonrasi Intel/AMD hepsi; program acilista otomatik kontrol eder)
+- ~11 GB bos alan (proje klasorunun kendisi; ayrica bir sey indirilmez)
+- NVIDIA GPU SART DEGILDIR. Varsa otomatik bulunur ve secim sunulur (CUDA surucu 550+ yeterli,
+  surucu zaten yoksa program CPU ile calisir).
+
+Ilk acilista program sizi yonlendirir:
+  1. Donanim taramasi sonucu + oneri (threads/context otomatik)
+  2. GPU varsa: "GPU ile mi CPU ile mi devam edelim?" secimi
+  3. Model klasoru secimi (gomulu taban model zaten hazir gelir)
+
+2) CALISTIRMA
+-------------
+run_gui.bat dosyasina cift tiklayin. Surucu harfinden bagimsizdir;
+klasoru USB ile baska PC'ye kopyalayip oradan da calistirabilirsiniz.
+
+3) GOMULU BILESENLER (internet gerekmez)
+----------------------------------------
+- models/base/ ......... Taban GGUF modeli (Turkce 7B Q4, ~4.1 GB)
+- libs/llama-server-cuda . NVIDIA GPU motoru + CUDA runtime (sistemde CUDA kurulu olmasa da calisir)
+- libs/llama-server-vulkan  AMD/Intel GPU motoru (Vulkan)
+- Python_Ortami/ ........ Tasinabilir conda ortami (CPU modeli icin llama-cpp-python dahil)
+
+4) YENI PC'DE ORTAM BOZULURSA (nadir: tasiyinca python acilmazsa)
+----------------------------------------------------------------
+env_create.bat dosyasini calistirin. Gerekenler: Miniconda kurulu olmasi
+(proje kokundeki Miniconda_Kurulum.exe) + internet (bir kez).
+
+5) GIZLILIK NOTU
+----------------
+API anahtari storage/config.json dosyasinda SAKLANMAZ (bos gelir).
+Kendi anahtarinizi Ayarlar ekranindan girin.
+
+6) IKINCI MAKINE KABUL TESTI (yeni PC'de 10 dakika)
+---------------------------------------------------
+[ ] run_gui.bat cift tik -> secim ekrani geliyor mu?
+[ ] CPU sec -> taban model yukleniyor mu? (ust barda sure yazar)
+[ ] Mimari Analiz -> kucuk klasor tara -> rapor kaydediliyor mu?
+[ ] NVIDIA varsa: GPU sec -> ust barda "llama.cpp (GPU/...)" yaziyor mu?
+[ ] AMD/Intel ise: GPU sorusu cikmamali, CPU ile devam etmeli
+[ ] Kapat -> model bosaltiliyor mu? (hata penceresi yok)
+[ ] Sorunda storage/logs/ogma.log ve errors.log dosyalarina bakin
+[ ] Python acilmazsa: env_create.bat (Miniconda + internet gerekli)
+
+7) MCP SUNUCU — IDE ENTEGRASYONU (VSCode / Cline / OpenCode)
+------------------------------------------------------------
+Ogma'yi editor asistanlarinin cagirabilecegi MCP araci yap (9 arac:
+sembol ara, dosya anahati, etki analizi, olu kod, kalite, bagimlilik,
+hafiza, kullanim dogrulama, proje ozeti).
+
+Cline/VSCode mcp.json konfigurasyonu:
+  "ogma": {
+    "command": "<proje>\\Python_Ortami\\envs\\ds_agent\\python.exe",
+    "args": ["<proje>\\ogma_mcp.py"]
+  }
+
+Gereksinim: env'e bir kez "pip install mcp" (sadece MCP sunucu icin).
+Tum araclari deterministiktir (kanitli graf) — editor LLM'i yorumlarken
+uydurma degil kanit kullanir. root_path verilmezse aktif workspace.

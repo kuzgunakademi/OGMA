@@ -1,0 +1,18 @@
+requests>=2.31.0
+colorama>=0.4.6
+rich>=13.0.0
+prompt-toolkit>=3.0.0
+pyyaml>=6.0
+aiofiles>=23.0.0
+pathlib2>=2.3.0
+watchdog>=3.0.0
+# Yerel model destegi (CPU icin zorunlu)
+# Asagidaki index, Windows icin derlenmis CPU wheel'ini saglar (AVX2, Ryzen uyumlu)
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+llama-cpp-python==0.3.35
+# ollama                    # Ollama API icin: pip install ollama
+
+# Gelistirme / test (opsiyonel)
+# pytest>=7.4.0
+# pytest-asyncio>=1.4.0
+# mcp>=2.2.0                # MCP sunucu icin (IDE entegrasyonu)
